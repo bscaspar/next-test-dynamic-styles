@@ -4,7 +4,6 @@ import dynamic from 'next/dynamic';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import ButtonCustom from '../components/ButtonCustom';
 import styles from '../styles/Home.module.scss';
 
 const ButtonBase = dynamic(() => import('../components/ButtonBase'));
@@ -25,7 +24,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <ButtonCustom />
+        <ButtonBase blue>blue button </ButtonBase>
         {showButton && <ButtonBase>red button</ButtonBase>}
       </main>
     </div>
