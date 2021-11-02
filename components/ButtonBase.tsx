@@ -9,17 +9,18 @@ type ButtonBaseProps = {
   className?: string;
 };
 
-const ButtonBase = ({ children, buttonStyle, className }: ButtonBaseProps) => (
-  <button
-    onClick={() => console.log('click!')}
-    className={cn(
-      styles.buttonBase,
-      { [styles.blue]: buttonStyle === 'blue', [styles.red]: buttonStyle === 'red' },
-      className,
-    )}
-  >
-    {children}
-  </button>
-);
+const ButtonBase = ({ children, buttonStyle, className }: ButtonBaseProps) => {
+  const classes = cn(
+    styles.btn,
+    { [styles.blue]: buttonStyle === 'blue', [styles.red]: buttonStyle === 'red' },
+    className,
+  );
+
+  return (
+    <button onClick={() => console.log('click!')} className={classes}>
+      {children}
+    </button>
+  );
+};
 
 export default ButtonBase;
