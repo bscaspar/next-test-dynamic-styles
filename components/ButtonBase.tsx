@@ -5,14 +5,18 @@ import styles from '../styles/ButtonBase.module.scss';
 
 type ButtonBaseProps = {
   children: string;
-  blue?: boolean;
+  buttonStyle?: 'blue' | 'red';
   className?: string;
 };
 
-const ButtonBase = ({ children, blue = false, className }: ButtonBaseProps) => (
+const ButtonBase = ({ children, buttonStyle, className }: ButtonBaseProps) => (
   <button
     onClick={() => console.log('click!')}
-    className={cn(styles.buttonBase, { [styles.blue]: blue }, className)}
+    className={cn(
+      styles.buttonBase,
+      { [styles.blue]: buttonStyle === 'blue', [styles.red]: buttonStyle === 'red' },
+      className,
+    )}
   >
     {children}
   </button>
