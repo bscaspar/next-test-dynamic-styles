@@ -26,7 +26,9 @@ const Home: NextPage = () => {
       <header>{show && <DynamicHeader />}</header>
 
       <main className={styles.main}>
-        <ButtonBase blue>blue button </ButtonBase>
+        <ButtonBase blue className={styles.homeButton}>
+          blue button
+        </ButtonBase>
       </main>
     </div>
   );
